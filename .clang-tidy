@@ -1,0 +1,26 @@
+---
+# Opinionated but justified. Disabled checks each have a reason:
+#  - trailing return types: style preference, no correctness value
+#  - magic numbers: wire formats and finance formulas are full of them, by spec
+#  - pro-bounds-pointer-arithmetic / reinterpret-cast: unavoidable in wire
+#    decoding and pool allocators; isolated to a few audited functions
+#  - avoid-c-arrays: fixed-size C arrays appear in wire buffers and tables
+Checks: >
+  bugprone-*,
+  performance-*,
+  modernize-*,
+  cppcoreguidelines-*,
+  readability-container-size-empty,
+  readability-make-member-function-const,
+  readability-redundant-*,
+  -modernize-use-trailing-return-type,
+  -cppcoreguidelines-avoid-magic-numbers,
+  -cppcoreguidelines-pro-bounds-pointer-arithmetic,
+  -cppcoreguidelines-pro-type-reinterpret-cast,
+  -cppcoreguidelines-avoid-c-arrays,
+  -modernize-avoid-c-arrays,
+  -cppcoreguidelines-pro-bounds-constant-array-index,
+  -bugprone-easily-swappable-parameters
+WarningsAsErrors: ''
+HeaderFilterRegex: '(include|tools|tests|bench)/.*'
+FormatStyle: file

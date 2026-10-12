@@ -1,0 +1,12 @@
+build/
+.cache/
+compile_commands.json
+*.itch
+*.NASDAQ_ITCH50
+*.gz
+!data/README.md
+.DS_Store
+.idea/
+.vscode/
+*.swp
+perf.data*
